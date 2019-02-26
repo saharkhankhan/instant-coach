@@ -12,4 +12,11 @@ class User < ApplicationRecord
   has_many :coach_reviews, class_name: :Review, foreign_key: "coach_id"
   has_many :coached_sports
   has_many :athlete_sports
+
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  # email & password validations are done by devices
+  validates :location, presence: true
+  # bio is not compulsory
+  validates_length_of :bio, maximum: 5, allow_blank: true
 end
