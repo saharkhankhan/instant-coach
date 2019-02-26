@@ -1,15 +1,10 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 puts "Cleaning Data Base"
 
 # this isnt working because booking and sessions are a many to many relationship
 # is there a way to destroy all at the same time?
+# UserSport.destroy_all
+# Sport.destroy_all
+
 Booking.destroy_all
 Session.destroy_all
 Review.destroy_all
@@ -44,6 +39,14 @@ puts "Creating Coches..."
   )
   coach.save!
 end
+
+puts "Adding your sports..."
+
+Sport.create(name: "Swimming")
+Sport.create(name: "Running")
+Sport.create(name: "HIT")
+Sport.create(name: "Weights")
+Sport.create(name: "Yoga")
 
 puts "Finshed ✅"
 
