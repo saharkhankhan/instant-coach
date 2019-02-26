@@ -6,8 +6,8 @@
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Sign Up</a>
+    <%= link_to "Sign Up", new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <!-- <a href="" class="navbar-wagon-item navbar-wagon-link">Sign Up</a> -->
     <a href="" class="navbar-wagon-item navbar-wagon-link">Sign In</a>
 
     <!-- Profile picture with dropdown list -->
@@ -39,7 +39,10 @@
   <div class="container text-center">
     <h1><strong>INSTANT COACH</strong></h1>
     <form class="text-center">
-    <input type="btn"> <i class="fas fa-search"></i>
+    <input type="btn">
+      <%= link_to sports_path do %>
+        <i class="fas fa-search"></i>
+      <% end %>
     </form>
   </div>
 </div>
