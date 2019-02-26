@@ -7,17 +7,15 @@
 
   <div class="form-inputs">
 
-    <%= f.input :first_name,
-                required: true,%>
-    <%= f.input :last_name,
-                required: true,%>
+    <%= f.input :first_name%>
+    <%= f.input :last_name%>
     <%= f.input :email,
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "email" }%>
     <%= f.input :user_image, as: :file %>
-    <%= f.input :bio,%>
-    <%= f.input :location,%>
+    <%= f.input :bio%>
+    <%= f.input :location%>
     <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
