@@ -1,6 +1,7 @@
 .fa-search{
   color: #2bfcdd;
   font-size: 30px;
+  padding-left: 8px;
 }
 
 input {
@@ -8,5 +9,7 @@ input {
   border: 1px solid #2bfcdd;
 }
 
-form{
+form {
+ display: flex;
+ justify-content: center;
 }
