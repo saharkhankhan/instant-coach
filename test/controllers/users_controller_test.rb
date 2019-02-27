@@ -31,8 +31,8 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get location:string" do
-    get users_location:string_url
+  test "should get address:string" do
+    get users_address:string_url
     assert_response :success
   end
 
