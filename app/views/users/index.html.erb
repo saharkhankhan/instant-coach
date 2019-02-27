@@ -1,5 +1,13 @@
-<% if User.find(params[:id]).coach == false %>
-  <%= render "athlete_profile", booking: @booking %>
-<% else %>
-  <%= render "coach_profile", booking: @booking %>
-<% end %>
+<div class="container mt-4">
+  <h1>Coaches</h1>
+  <% @coaches.each do |coach|  %>
+  <div class="coach-card p-2 border bg-white d-flex justify-content-between">
+    <div>
+      <h3><%= coach.first_name.capitalize %></h3>
+      <p><%= cl_image_tag coach.user_image, :transformation => { :width => 400, :crop => "pad" } %></p>
+      <%= link_to "View coach", user_sessions_path(coach), class: "btn btn-primary" %>
+    </div>
+  </div>
+  <% end %>
+  <%= link_to "Go Back to Home", root_path, class: "btn btn-secondary my-4" %>
+</div>

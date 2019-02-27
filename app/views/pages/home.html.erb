@@ -22,7 +22,6 @@
         <% if user_signed_in? %>
           <%= cl_image_tag current_user.user_image, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", data: { toggle: 'dropdown' }%>
         <% end %>
-<!--         <img src="https://kitt.lewagon.com/placeholder/users/estchan" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown"> -->
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li><a href="#">Profile</a></li>
           <li><a href="#">Dashboard</a></li>
@@ -46,12 +45,7 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1527933053326-89d1746b76b9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);">
   <div class="container text-center">
     <h1><strong>INSTANT COACH</strong></h1>
-    <form class="text-center">
-    <input type="btn">
-      <%= link_to sports_path do %>
-        <i class="fas fa-search"></i>
-      <% end %>
-    </form>
+    <%= link_to "Find a Coach Now!", users_path, class: "home-btn"%>
   </div>
 </div>
 
