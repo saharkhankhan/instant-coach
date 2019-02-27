@@ -5,10 +5,6 @@ puts "Cleaning Data Base"
 # UserSport.destroy_all
 # Sport.destroy_all
 
-Booking.destroy_all
-Session.destroy_all
-Review.destroy_all
-User.destroy_all
 
 puts "Creating Athletes..."
 
@@ -20,6 +16,7 @@ puts "Creating Athletes..."
     coach: false,
     password: Faker::Internet.password(8),
     address: Faker::WorldCup.city,
+    remote_user_image_url: 'https://images.unsplash.com/photo-1480179087180-d9f0ec044897?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=658&q=80',
     bio: "I love to train super hard. I am passionate about sport!!!⚽️🏆"
   )
   athlete.save!
@@ -35,6 +32,7 @@ puts "Creating Coches..."
     coach: true,
     password: Faker::Internet.password(8),
     address: Faker::WorldCup.city,
+    remote_user_image_url: 'https://images.unsplash.com/photo-1508802654646-fb6b7f78027d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80',
     bio: "I love to coach. I am passionate about sport!!! I am a tyrant so watch out 🏋🏻‍♀️"
   )
   coach.save!
