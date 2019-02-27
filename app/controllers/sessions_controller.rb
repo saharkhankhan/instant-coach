@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
   def create
     @user = User.find(params[:user_id])
     @session = Session.new(session_params)
-    @session.user = @user
+    @session.coach = @user
     if @session.save
       redirect_to user_path(@user)
     else
@@ -29,8 +29,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:user_id])
     @session = Session.find(params[:id])
+    @user = @session.coach
     @session.destroy
     redirect_to user_path(@user)
   end
