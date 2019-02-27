@@ -19,7 +19,7 @@ puts "Creating Athletes..."
     email: Faker::Internet.email,
     coach: false,
     password: Faker::Internet.password(8),
-    location: Faker::WorldCup.city,
+    address: Faker::WorldCup.city,
     bio: "I love to train super hard. I am passionate about sport!!!⚽️🏆"
   )
   athlete.save!
@@ -34,7 +34,7 @@ puts "Creating Coches..."
     email: Faker::Internet.email,
     coach: true,
     password: Faker::Internet.password(8),
-    location: Faker::WorldCup.city,
+    address: Faker::WorldCup.city,
     bio: "I love to coach. I am passionate about sport!!! I am a tyrant so watch out 🏋🏻‍♀️"
   )
   coach.save!
