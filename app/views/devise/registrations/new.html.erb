@@ -7,15 +7,16 @@
 
   <div class="form-inputs">
 
-    <%= f.input :first_name%>
-    <%= f.input :last_name%>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
     <%= f.input :email,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :user_image, as: :file %>
-    <%= f.input :bio%>
-    <%= f.input :address%>
+                input_html: { autocomplete: "email" } %>
+    <%= f.input :user_image %>
+    <%= f.input :user_image_cache, as: :hidden %>
+    <%= f.input :bio %>
+    <%= f.input :address %>
     <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
@@ -26,9 +27,6 @@
     <%= f.input :coach, inline_label: 'Are you a Coach?' %>
     <%= f.button :submit, "Sign up", class:"btn btn-primary mb-4" %>
 
-  </div>
-
-  <div class="form-actions">
   </div>
 <% end %>
 
