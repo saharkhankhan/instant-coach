@@ -1,11 +1,12 @@
 
-<div class="container">
+<div class="container text-center">
   <h1>Coach Profile</h1>
 <!--   this is the profile that of the coach as seen by the athlete who is browsing  -->
-  <div class="flex_box">
-    <%= @coach.first_name %>
-      <div class="card" style="width: 18rem;">
-        <%= cl_image_tag @coach.user_image, class: "card-img-top" %>
+  <div class="">
+    <%= cl_image_tag @coach.user_image, class: "round_image" %>
+    <h2><%= @coach.first_name %></h2>
+    <p><%= @coach.bio %><p>
+    <div class="card mx-auto" style="width: 400px;">
 <!--         <div class="card-body">
           <h5 class="card-title"><%= @coach.first_name %>%= @coach.last_name %></h5>
           <p class="card-text">
@@ -25,7 +26,7 @@
         <li>Running | 2 hrs</li>
       </ul>
 
+    </div>
       <%= link_to "Back to Results", users_path, class:"btn btn-secondary my-4" %>
-
   </div>
 </div>
