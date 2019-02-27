@@ -19,5 +19,11 @@ class User < ApplicationRecord
   # email & password validations are done by devices
   validates :address, presence: true
   # bio is not compulsory
+  validates :user_image, presence: :true
   validates_length_of :bio, maximum: 150, allow_blank: true
+
+
+  mount_uploader :user_image, UserImageUploader
+
+
 end

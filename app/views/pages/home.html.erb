@@ -19,7 +19,10 @@
     <!-- Profile picture with dropdown list -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
-        <img src="https://kitt.lewagon.com/placeholder/users/estchan" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+        <% if user_signed_in? %>
+          <%= cl_image_tag current_user.user_image, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", data: { toggle: 'dropdown' }%>
+        <% end %>
+<!--         <img src="https://kitt.lewagon.com/placeholder/users/estchan" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown"> -->
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li><a href="#">Profile</a></li>
           <li><a href="#">Dashboard</a></li>
