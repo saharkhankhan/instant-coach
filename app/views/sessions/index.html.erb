@@ -1,33 +1,33 @@
-
-<div class="container text-center">
-  <h1>Coach Profile</h1>
 <!--   this is the profile that of the coach as seen by the athlete who is browsing  -->
-  <div class="">
-    <%= cl_image_tag @coach.user_image, class: "round_image" %>
-    <h2><%= @coach.first_name %></h2>
-    <p><%= @coach.bio %><p>
+<div class="container text-center">
+  <div class="row">
+    <div class="col-12">
+      <div class="wrapper">
+        <div class="banner-half" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/1600x900/?fitness);">
+         <h2><%= @coach.first_name %></h2>
+          <%= cl_image_tag @coach.user_image, class: "round_image", id: "image-top" %>
+        </div>
+        <p><%= @coach.bio %></p>
+      </div>
+
     <div class="card mx-auto" style="width: 400px;">
-<!--         <div class="card-body">
-          <h5 class="card-title"><%= @coach.first_name %>%= @coach.last_name %></h5>
+        <div class="card-body">
+          <h5 class="card-title">This is title</h5>
           <p class="card-text">
             <li>
               <%# @coach.sessions.each do |session| %>
-                <%#= session.duration %> <%= @coach.first_name %>
+                <%#= session.duration %>
               <%# end %>
+              This should be session details
             </li>
           </p>
-          <%#= link_to @coach.name, user_path(@coach), class: "btn btn-primary" %>
+          <%= link_to "Book this session", user_path(@coach), class: "btn btn-primary" %>
         </div>
-      </div> -->
-      <h2>Sessions</h2>
-      <ul>
-        <li>Boxing | 2hrs </li>
-        <li>Yoga | 1hr</li>
-        <li>Running | 2 hrs</li>
-      </ul>
-
-    </div>
-      <p><%= link_to "Book Coach", "", class: "btn btn-primary my-2"  %></p>
-      <p><%= link_to "Back to Results", users_path, class:"btn btn-secondary mb-4" %></p>
+      </div>
   </div>
+  <div class="bottom-buttons">
+<!--     <p><%#= link_to "Book Coach", "", class: "btn btn-2"  %></p> -->
+    <p><%= link_to "Back to Results", users_path, class:"btn btn-secondary mb-4" %></p>
+  </div>
+</div>
 </div>

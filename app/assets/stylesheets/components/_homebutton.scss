@@ -1,0 +1,31 @@
+.home-btn{
+  background-color: transparent;
+  padding: 4px;
+  text-decoration: none;
+  border: black 2px solid;
+  border-color: #2bfcdd;
+  border-radius: 5px;
+  color:#2bfcdd;
+  &:hover {
+    color: #6d757d;
+    border-color: #6d757d;
+    text-decoration: none;
+  }
+}
+
+.btn-2 {
+  background-color: transparent;
+  padding: 4px;
+  text-decoration: none;
+  border: black 2px solid;
+  border-color: #6d757d;
+  border-radius: 5px;
+  color:#6d757d;
+  margin: 8px;
+  width: 100px;
+  &:hover {
+    color: #2bfcdd;
+    border-color: #2bfcdd;
+    text-decoration: none;
+  }
+}
