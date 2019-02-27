@@ -6,9 +6,15 @@
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-    <%= link_to "Sign Up", new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <!-- <a href="" class="navbar-wagon-item navbar-wagon-link">Sign Up</a> -->
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Sign In</a>
+
+
+
+    <% if user_signed_in? %>
+        <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %>
+    <% else %>
+      <%= link_to "Sign Up", new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Sign In",  new_user_session_path , class: "navbar-wagon-item navbar-wagon-link"%>
+    <% end %>
 
     <!-- Profile picture with dropdown list -->
     <div class="navbar-wagon-item">
@@ -17,7 +23,6 @@
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li><a href="#">Profile</a></li>
           <li><a href="#">Dashboard</a></li>
-          <li><a href="#">Log Out</a></li>
         </ul>
       </div>
     </div>
