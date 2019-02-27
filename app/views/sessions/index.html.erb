@@ -1,22 +1,31 @@
-<h1>The profile page of the coach that the athlete sees</h1>
 
 <div class="container">
+  <h1>Coach Profile</h1>
+<!--   this is the profile that of the coach as seen by the athlete who is browsing  -->
   <div class="flex_box">
-    <% @users.each do |user| %>
+    <%= @coach.first_name %>
       <div class="card" style="width: 18rem;">
-        <%= cl_image_tag user.photo, class: "card-img-top" %>
-        <div class="card-body">
-          <h5 class="card-title"><%= user.first_name %>%= user.last_name %></h5>
+        <%= cl_image_tag @coach.user_image, class: "card-img-top" %>
+<!--         <div class="card-body">
+          <h5 class="card-title"><%= @coach.first_name %>%= @coach.last_name %></h5>
           <p class="card-text">
             <li>
-              <% user.sessions.each do |session| %>
-                <%= session.duration %> <%= user.first_name %>
-              <% end %>
+              <%# @coach.sessions.each do |session| %>
+                <%#= session.duration %> <%= @coach.first_name %>
+              <%# end %>
             </li>
           </p>
-          <%= link_to user.name, user_path(user), class: "btn btn-primary" %>
+          <%#= link_to @coach.name, user_path(@coach), class: "btn btn-primary" %>
         </div>
-      </div>
-    <% end %>
+      </div> -->
+      <h2>Sessions</h2>
+      <ul>
+        <li>Boxing | 2hrs </li>
+        <li>Yoga | 1hr</li>
+        <li>Running | 2 hrs</li>
+      </ul>
+
+      <%= link_to "Back to Results", users_path, class:"btn btn-secondary my-4" %>
+
   </div>
 </div>
