@@ -1,22 +1,32 @@
-<!-- <div class="container">
-  <div class="flex_box"> -->
-    <%# @users.each do |user| %>
-      <!-- <div class="card" style="width: 18rem;"> -->
-       <!--  <%#= cl_image_tag user.photo, class: "card-img-top" %> -->
-        <!-- <div class="card-body">
-          <h5 class="card-title"><%#= user.first_name %>%= user.last_name %></h5>
-          <p class="card-text">
-            <li>
-              <%# user.sessions.each do |session| %>
-                <%#= session.duration %> <%#= user.first_name %>
-              <%# end %>
-            </li>
-          </p>
-          <%#= link_to user.name, user_path(user), class: "btn btn-primary" %>
-        </div>
-      </div>
-    <%# end %>
-  </div>
+<div class="container text-center">
+  <h1>Coach Dashboard</h1>
+  <!-- <h1>This is Coach dashboard. It should allow coach to create, edit, destroy sessions.</h1> -->
+
+
+    <div class="flex_box">
+          <%= cl_image_tag current_user.user_image, class: "round_image" %>
+          <h2><%= current_user.first_name %> <%= current_user.last_name %></h2>
+          <p><%= current_user.bio %></p>
+          <div class="row">
+            <div class="flex-box">
+              <% current_user.coach_sessions.each do |coach_session| %>
+                <div class="card border-info mb-3" style="width: 18rem;">
+                  <div class="card-body">
+                    <p class="card-text">
+                      <li>
+                          <%= coach_session.duration %> hours of Yoga
+                      </li>
+                    </p>
+                    <%= link_to "Edit this session", edit_user_session_path(current_user), class: "btn btn-primary m-3" %>
+                    <%= link_to "Delete this session", edit_user_session_path(current_user), method: :delete, class: "btn btn-primary" %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+
+            </div>
+
+    </div>
+
+
 </div>
- -->
-<h1>Coach profile page</h1>
