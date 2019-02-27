@@ -1,0 +1,14 @@
+.home-btn{
+  background-color: transparent;
+  padding: 4px;
+  text-decoration: none;
+  border: black 2px solid;
+  border-color: #2bfcdd;
+  border-radius: 5px;
+  color:#2bfcdd;
+  &:hover {
+    color:white;
+    border-color:white;
+    text-decoration: none;
+  }
+}
