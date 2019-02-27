@@ -2,6 +2,10 @@ class UsersController < ApplicationController
   # before_action :set_user, only: [:show, :edit, :update]
 
   def index
+    @coaches = User.all.where(coach: true)
+  end
+
+  def results
     @users = User.all
   end
 

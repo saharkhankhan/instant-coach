@@ -1,1 +1,24 @@
-<h1>Athlete Profile Page</h1>
+
+<div class="container p-6 mt-4">
+    <h1>Athlete Profile Page</h1>
+
+        <%= cl_image_tag current_user.user_image, :transformation => { :width => 400, :height =>400, :crop => "fill" } %>
+          <div class="card-body">
+            <h5 class="card-title"><%= current_user.first_name %> <%= current_user.last_name %></h5>
+            <h6>Athelete Bio:</h6>
+            <p><%= current_user.bio %></p>
+             <%= link_to "Back to Home", root_path, class: "btn btn-secondary" %>
+
+            <!--   <p class="card-text">
+            <li>
+              <%#current_user.bookings.each do |booking| %>
+                <%#= booking.date %><%#=booking.time%> <%#= user.first_name %>
+              <%#end %>
+            </li>
+              </p>
+         <!--  <%#= link_to "Edit Profile", edit_user_registration_path(current_user), class: "btn btn-primary" %> -->
+          <!-- </div> -->
+    <%# end %>
+  </div>
+
+
