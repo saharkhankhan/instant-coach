@@ -1,1 +1,23 @@
+
+<div class="container">
 <h1>Athlete Profile Page</h1>
+  <div class="flex_box">
+
+      <div class="card" style="width: 18rem;">
+        <%= cl_image_tag current_user.user_image, class: "card-img-top" %>
+          <div class="card-body">
+            <h5 class="card-title"><%= current_user.first_name %> <%= current_user.last_name %></h5>
+            <p><%= current_user.bio %></p>
+            <!--   <p class="card-text">
+            <li>
+              <%#current_user.bookings.each do |booking| %>
+                <%#= booking.date %><%#=booking.time%> <%#= user.first_name %>
+              <%#end %>
+            </li>
+              </p>
+         <!--  <%#= link_to "Edit Profile", edit_user_registration_path(current_user), class: "btn btn-primary" %> -->
+          <!-- </div> -->
+    <%# end %>
+  </div>
+</div>
+
