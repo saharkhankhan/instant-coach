@@ -1,20 +1,5 @@
-<div class="container">
-  <div class="flex_box">
-      <div class="card" style="width: 18rem;">
-       <!--  <%#= cl_image_tag user.photo, class: "card-img-top" %> -->
-        <div class="card-body">
-          <h5 class="card-title"><%= @user.first_name %> <%= @user.last_name %></h5>
-          <p class="card-text">
-            <li>
-              <% @user.coach_sessions.each do |coach_session| %>
-                <%= coach_session.duration %> hours of <strong>this is supposed to be the sports name</strong>
-            </li>
-          </p>
-          <%= link_to "Book Now", user_path(@user), class: "btn btn-primary" %>
-          <%= link_to "🗑️", "/users/#{@user.id}/sessions/#{coach_session.id}", method: :delete, data: { confirm: "Are you sure?" } %>
-              <% end %>
-        </div>
-      </div>
-
-  </div>
-</div>
+<% if User.find(params[:id]).coach == false %>
+  <%= render "athlete_profile", booking: @booking %>
+<% else %>
+  <%= render "coach_profile", booking: @booking %>
+<% end %>

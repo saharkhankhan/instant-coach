@@ -6,9 +6,9 @@ class BookingsController < ApplicationController
   def create
     @user = User.find(params[:user_id])
     @booking = Booking.new(booking_params)
-    @booking.athlete = @user
+    @booking.athlete = current_user
     if @booking.save
-      redirect_to user_path(@user)
+      redirect_to user_path(current_user)
     else
       render :new
     end
@@ -18,7 +18,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @user = @booking.coach
     @booking.destroy
-    redirect_to user_path(@user)
+    redirect_to user_path(current_user)
   end
 
   private

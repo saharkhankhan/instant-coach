@@ -1,4 +1,10 @@
 class SessionsController < ApplicationController
+
+  def index
+    # @coach = User.find(params[:user_id])
+    # @coach_sessions = Session.all.where(user_id: @coach.id)
+  end
+
   def new
     @session = sessions.new
   end
