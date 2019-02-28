@@ -1,0 +1,11 @@
+
+
+  <h1>Book a Session</h1>
+  <%= simple_form_for [@user, @booking] do |f| %>
+    <%= f.association :session, label: 'Choose Your Session' %>
+    <%= f.input :date, label: 'Choose The Date'  %>
+    <%= f.input :time, label: 'Choose The Time'  %>
+    <%= f.button :submit, class: "btn home-btn" %>
+  <% end %>
+
+

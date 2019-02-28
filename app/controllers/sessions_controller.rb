@@ -20,8 +20,7 @@ class SessionsController < ApplicationController
   end
 
   def edit
-    @coach = current_user
-    @session = Session.new
+
   end
 
   def update
