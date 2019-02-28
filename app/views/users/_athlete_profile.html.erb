@@ -13,28 +13,22 @@
         </div>
       </div>
     </div>
-    <%# current_user.bookings.each do |booking| %>
-    <div class="col-4 d-flex mx-auto justify-content-center my-2">
-      <div class="card mx-auto" style="width: 400px;">
-        <div class="card-body">
-            <h3>Your Bookings</h3>
-            <% current_user.athlete_bookings.each do |booking| %>
-              <h4><%= booking.session.title %> with <%= booking.session.coach.first_name %><h4>
-              <p>Date: <%= booking.date %> | Time: <%= booking.time %></p>
-              <p><%= link_to "Cancel This Booking", user_booking_path(current_user, booking), method: :delete,
-              data: { confirm: "Are you sure?" }, class: "btn home-btn" %></p>
-            <% end %>
-          <h5 class="card-title">This is title of booking</h5>
-          <p class="card-text">
-            <li>
-                <%#= booking.date %><%#=booking.time%>
-              This should be booking details
-            </li>
-          </p>
+    <div class="container d-flex mx-auto justify-content-center">
+<!--       <h3 class="text-center">Your Bookings</h3> -->
+      <% current_user.athlete_bookings.each do |booking| %>
+      <div class="col-4 d-flex mx-auto justify-content-center my-2 booking-card">
+        <div class="card mx-auto" style="width: 400px;">
+          <div class="card-body">
+                <h5><%= booking.session.title %> with <%= booking.session.coach.first_name %><h5>
+                <p class="card-text">Date: <%= booking.date %> </p>
+                <p class="card-text">Time: <%= booking.time.strftime("%H:%M") %></p>
+                <%= link_to "Cancel This Booking", user_booking_path(current_user, booking), method: :delete,
+                data: { confirm: "Are you sure?" }, class: "btn home-btn" %>
+          </div>
         </div>
       </div>
+      <% end %>
     </div>
-    <%# end %>
   </div>
   <div class="bottom-buttons text-center">
     <p><%= link_to "Home", root_path, class:"btn btn-secondary mb-4" %></p>
