@@ -5,18 +5,21 @@
         <div class="banner-half" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/1600x900/?fitness);">
          <h2>Hi, Coach <%= current_user.first_name.capitalize %>!</h2>
           <%= cl_image_tag current_user.user_image, class: "round_image", id: "image-top" %>
-          <p><%= current_user.bio %></p>
-
-          <h3>My Sports:</h3>
-          <% current_user.user_sports.each do |u_sport|%>
-            <p>🏅<%= u_sport.sport.name %></p>
-          <% end %>
-          <%= link_to "Add a Sport", new_user_user_sport_path(current_user), class: "btn btn-primary" %>
         </div>
+          <div class="another-half">
+            <div class="container">
+              <p><%= current_user.bio %></p>
+              <% current_user.user_sports.each do |u_sport|%>
+                <p> 🏅<%= u_sport.sport.name %></p>
+              <% end %>
+              <%= link_to "Add your specialty", new_user_user_sport_path(current_user), class: "btn btn-2" %>
+              <%= link_to "Edit Profile", "", class: "btn btn-2" %>
+            </div>
+          </div>
 
       </div>
     </div>
-</div>
+    <div class="col-4 d-flex mx-auto justify-content-center my-2">
       <div class="card mx-auto" style="width: 400px;">
         <div class="card-body">
           <h5 class="card-title">This is title of session</h5>
@@ -28,11 +31,13 @@
           <%= link_to "Edit this session", edit_user_session_path(current_user), class: "btn btn-2" %>
           <%= link_to "Delete this session", "", class: "btn btn-2" %>
         </div>
+      </div>
     </div>
   </div>
-  <div class="bottom-buttons">
+  <div class="bottom-buttons text-center">
     <p><%= link_to "Home", root_path, class:"btn btn-secondary mb-4" %></p>
   </div>
+</div>
 </div>
 
 
