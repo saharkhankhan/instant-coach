@@ -1,11 +1,5 @@
 puts "Cleaning Data Base"
 
-# this isnt working because booking and sessions are a many to many relationship
-# is there a way to destroy all at the same time?
-# UserSport.destroy_all
-# Sport.destroy_all
-
-
 puts "Creating Athletes..."
 
 
