@@ -7,11 +7,9 @@ class SessionsController < ApplicationController
   def new
     @coach = current_user
     @session = Session.new
-
   end
 
   def create
-
     @session = Session.new(session_params)
     @session.coach = current_user
     if @session.save
@@ -22,6 +20,7 @@ class SessionsController < ApplicationController
   end
 
   def edit
+
   end
 
   def update
@@ -39,7 +38,7 @@ class SessionsController < ApplicationController
     @session = Session.find(params[:id])
     @user = @session.coach
     @session.destroy
-    redirect_to user_path(@user)
+    redirect_to user_path(current_user)
   end
 
   private
