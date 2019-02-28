@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users do
       resources :sessions
+      resources :user_sports do
+        resources :sports, only: [:index, :show, :create, :new]
+      end
   end
-  resources :sports, only: [:index, :show]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

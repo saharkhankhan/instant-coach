@@ -36,6 +36,8 @@
 
 <!-- <div class="container text-center">
   <h1>Coach Dashboard</h1>
+
+=======
   <h1>This is Coach dashboard. It should allow coach to create, edit, destroy sessions.</h1>
 
 
@@ -43,6 +45,10 @@
           <%#= cl_image_tag current_user.user_image, class: "round_image" %>
           <h2><%= current_user.first_name %> <%= current_user.last_name %></h2>
           <p><%= current_user.bio %></p>
+          <h3>My Sports:</h3>
+          <% current_user.user_sports.each do |u_sport|%>
+            <p>🏅<%= u_sport.sport.name %></p>
+          <% end %>
           <div class="row">
             <div class="flex-box">
               <%# current_user.coach_sessions.each do |coach_session| %>

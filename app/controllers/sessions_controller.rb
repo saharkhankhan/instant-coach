@@ -5,7 +5,8 @@ class SessionsController < ApplicationController
   end
 
   def new
-    @session = sessions.new
+    @coach = current_user
+    @session = Session.new
   end
 
   def create
