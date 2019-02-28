@@ -15,7 +15,6 @@
               <button type="button" class="btn btn-2" data-toggle="modal" data-target="#exampleModal">
                 Add a specialty
               </button>
-              <%= link_to "Edit Profile", "", class: "btn btn-2" %>
               <%= link_to "Add a Session", "/users/#{current_user.id}/sessions/new", class: "btn btn-2" %>
             </div>
           </div>
@@ -32,8 +31,8 @@
                   <%= session.description %>
                 </li>
               </p>
-              <%= link_to "Edit this session", edit_user_session_path(current_user), class: "btn btn-2" %>
-              <%= link_to "Delete this session", "", class: "btn btn-2" %>
+              <%= link_to "Edit this session", "/users/#{current_user.id}/sessions/#{session.id}/edit", class: "btn btn-2" %>
+              <%= link_to "Delete this session", "/users/#{current_user.id}/sessions/#{session.id}", method: :delete, class: "btn btn-2" %>
           </div>
         </div>
       </div>
@@ -48,10 +47,10 @@
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-          <%= simple_form_for [current_user, current_user.user_sports.first] do |f| %>
-      <%= f.association :sport %>
-      <%= f.button :submit, class: "btn home-btn" %>
-    <% end %>
+      <%= simple_form_for [current_user, UserSport.new] do |f| %>
+        <%= f.association :sport %>
+        <%= f.button :submit, 'Add!',class: "btn home-btn" %>
+      <% end %>
     </div>
   </div>
 </div>
