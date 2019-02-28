@@ -33,7 +33,6 @@
                   <%= session.description %>
                 </li>
               </p>
-              <%= link_to "Edit this session", "/users/#{current_user.id}/sessions/#{session.id}/edit", class: "btn btn-2" %>
               <%= link_to "Delete this session", "/users/#{current_user.id}/sessions/#{session.id}", method: :delete, class: "btn btn-2" %>
           </div>
         </div>
