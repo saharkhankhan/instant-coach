@@ -6,6 +6,9 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
 
+  geocoded_by :address
+  #geocode
+
   has_many :athlete_bookings, class_name: :Booking, foreign_key: "athlete_id"
   has_many :coach_sessions, class_name: :Session, foreign_key: "coach_id"
 
@@ -22,6 +25,7 @@ class User < ApplicationRecord
   validates :user_image, presence: :true
   validates_length_of :bio, maximum: 150, allow_blank: true
 
+  after_validation :geocode, if: :will_save_change_to_address?
 
   mount_uploader :user_image, UserImageUploader
 

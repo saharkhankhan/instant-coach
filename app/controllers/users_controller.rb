@@ -2,7 +2,13 @@ class UsersController < ApplicationController
   # before_action :set_user, only: [:show, :edit, :update]
 
   def index
-    @coaches = User.all.where(coach: true)
+    @coaches = User.where(coach: true).where.not(latitude: nil, longitude: nil)
+    @markers = @coaches.map do |coach|
+      {
+        lng: coach.longitude,
+        lat: coach.latitude
+      }
+    end
   end
 
   def results
