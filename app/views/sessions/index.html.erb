@@ -9,19 +9,19 @@
         </div>
         <p><%= @coach.bio %></p>
       </div>
-
-    <div class="card mx-auto" style="width: 400px;">
-        <div class="card-body">
-          <h5 class="card-title">This is title</h5>
-          <p class="card-text">
-
-              <% @coach.coach_sessions.each do |session| %>
-                <p><%= session.title %> | <%= session.description %><p>
-              <% end %>
-          </p>
-        </div>
-          <%= link_to "Book this Coach", new_user_booking_path(@coach), class: "btn btn-primary mt-4" %>
+  <div class="container d-flex mx-auto justify-content-center">
+    <% @coach.coach_sessions.each do |session| %>
+      <div class="col-4 d-flex mx-auto justify-content-center my-2">
+        <div class="card mx-auto" style="width: 400px;">
+            <div class="card-body">
+              <h4 class="card-title"><%= session.title %></h4>
+                    <p><%= session.description %><p>
+              <%= link_to "Book this session", new_user_booking_path(@coach), class: "btn home-btn" %>
+            </div>
+          </div>
       </div>
+    <% end %>
+  </div>
   </div>
   <div class="bottom-buttons">
 <!--     <p><%#= link_to "Book Coach", "", class: "btn btn-2"  %></p> -->

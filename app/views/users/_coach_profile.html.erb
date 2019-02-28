@@ -14,10 +14,10 @@
               <% current_user.user_sports.each do |u_sport|%>
                 <p> 🏅<%= u_sport.sport.name %></p>
               <% end %>
-              <button type="button" class="btn btn-2" data-toggle="modal" data-target="#exampleModal">
+              <button type="button" class="btn home-btn" data-toggle="modal" data-target="#exampleModal">
                 Add a specialty
               </button>
-              <%= link_to "Add a Session", "/users/#{current_user.id}/sessions/new", class: "btn btn-2" %>
+              <%= link_to "Add a Session", "/users/#{current_user.id}/sessions/new", class: "btn home-btn" %>
             </div>
           </div>
 
@@ -25,30 +25,28 @@
     </div>
     <% current_user.coach_sessions.each do |session| %>
       <div class="col-4 d-flex mx-auto justify-content-center my-2">
-        <div class="card mx-auto" style="width: 400px;">
+        <div class="card bmx-auto" style="width: 400px;">
           <div class="card-body">
-              <h5 class="card-title"><%= session.title %></h5>
-              <p class="card-text">
-                <li>
-                  <%= session.description %>
-                </li>
-              </p>
-              <%= link_to "Delete this session", "/users/#{current_user.id}/sessions/#{session.id}", method: :delete, class: "btn btn-2" %>
+              <h4 class="card-title"><%= session.title %></h4>
+              <p class="card-text"><%= session.description %></p>
+              <%= link_to "Delete session", "/users/#{current_user.id}/sessions/#{session.id}", method: :delete, class: "btn home-btn" %>
           </div>
         </div>
       </div>
     <% end %>
   </div>
-  <h3>Your Bookings</h3>
+<!--   <h3>Your Bookings</h3> -->
   <% current_user.athlete_bookings.each do |booking| %>
-    <h4><%= booking.session.title %> with <%= booking.session.coach.first_name %><h4>
-    <p>Date: <%= booking.date %> | Time: <%= booking.time %></p>
-
-    <p><%= link_to "delete", user_booking_path(current_user, booking), method: :delete,
-              data: { confirm: "Are you sure?" }, class: "font-red" %></p>
-
-
-
+    <div class="col-4 d-flex mx-auto justify-content-center my-2">
+      <div class="card mx-auto" style="width: 400px;">
+        <div class="card-body">
+          <h4><%= booking.session.title %> with <%= booking.session.coach.first_name %><h4>
+          <p>Date: <%= booking.date %></p>
+          <p>Time: <%= booking.time.strftime("%H:%M")%></p>
+         <%= link_to "Delete Booking", user_booking_path(current_user, booking), method: :delete, data: { confirm: "Are you sure?" }, class: "btn home-btn" %>
+        </div>
+      </div>
+    </div>
   <% end %>
   <div class="bottom-buttons text-center">
     <p><%= link_to "Home", root_path, class:"btn btn-secondary mb-4" %></p>
