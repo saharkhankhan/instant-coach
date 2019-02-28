@@ -7,14 +7,15 @@ class SessionsController < ApplicationController
   def new
     @coach = current_user
     @session = Session.new
+
   end
 
   def create
-    @user = User.find(params[:user_id])
+
     @session = Session.new(session_params)
-    @session.coach = @user
+    @session.coach = current_user
     if @session.save
-      redirect_to user_path(@user)
+      redirect_to user_path(current_user)
     else
       render :new
     end
@@ -44,6 +45,6 @@ class SessionsController < ApplicationController
   private
 
   def session_params
-    params.require(:session).permit(:duration, :user_sport_id)
+    params.require(:session).permit(:title, :description)
   end
 end
