@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users do
       resources :sessions
+      resources :bookings
       resources :user_sports do
         resources :sports, only: [:index, :show, :create, :new]
       end

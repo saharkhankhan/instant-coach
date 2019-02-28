@@ -14,15 +14,13 @@
         <div class="card-body">
           <h5 class="card-title">This is title</h5>
           <p class="card-text">
-            <li>
-              <%# @coach.sessions.each do |session| %>
-                <%#= session.duration %>
-              <%# end %>
-              This should be session details
-            </li>
+
+              <% @coach.coach_sessions.each do |session| %>
+                <p><%= session.title %> | <%= session.description %><p>
+              <% end %>
           </p>
-          <%= link_to "Book this session", user_path(@coach), class: "btn btn-primary" %>
         </div>
+          <%= link_to "Book this Coach", new_user_booking_path(@coach), class: "btn btn-primary mt-4" %>
       </div>
   </div>
   <div class="bottom-buttons">
