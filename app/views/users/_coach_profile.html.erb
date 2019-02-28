@@ -12,7 +12,9 @@
               <% current_user.user_sports.each do |u_sport|%>
                 <p> 🏅<%= u_sport.sport.name %></p>
               <% end %>
-              <%= link_to "Add a specialty", new_user_user_sport_path(current_user), class: "btn btn-2" %>
+              <button type="button" class="btn btn-2" data-toggle="modal" data-target="#exampleModal">
+                Add a specialty
+              </button>
               <%= link_to "Edit Profile", "", class: "btn btn-2" %>
               <%= link_to "Add a Session", "/users/#{current_user.id}/sessions/new", class: "btn btn-2" %>
             </div>
@@ -43,5 +45,15 @@
 </div>
 </div>
 
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+          <%= simple_form_for [current_user, current_user.user_sports.first] do |f| %>
+      <%= f.association :sport %>
+      <%= f.button :submit, class: "btn home-btn" %>
+    <% end %>
+    </div>
+  </div>
+</div>
 
 
