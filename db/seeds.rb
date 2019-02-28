@@ -11,7 +11,7 @@ puts "Creating Athletes..."
 10.times do
   athlete = User.new(
     first_name: Faker::Football.player.split[0],
-    last_name: Faker::Football.player.split[1],
+    last_name: Faker::Football.player.split[1] || "Smith",
     email: Faker::Internet.email,
     coach: false,
     password: Faker::Internet.password(8),
@@ -27,7 +27,7 @@ puts "Creating Coches..."
 10.times do
   coach = User.new(
     first_name: Faker::Football.coach.split[0],
-    last_name: Faker::Football.coach.split[1],
+    last_name: Faker::Football.coach.split[1] || "Jackson",
     email: Faker::Internet.email,
     coach: true,
     password: Faker::Internet.password(8),

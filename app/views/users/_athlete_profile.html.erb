@@ -6,10 +6,15 @@
          <h2>Hi, <%= current_user.first_name.capitalize %>!</h2>
           <%= cl_image_tag current_user.user_image, class: "round_image", id: "image-top" %>
         </div>
-        <p><%= current_user.bio %></p>
-        <%= link_to "Edit Profile", edit_user_registration_path(current_user), class: "btn home-btn" %>
+        <div class="another-half">
+          <p><%= current_user.bio %></p>
+          <%= link_to "Edit Profile", edit_user_registration_path(current_user), class: "btn home-btn" %>
+
+        </div>
       </div>
+    </div>
     <%# current_user.bookings.each do |booking| %>
+    <div class="col-4 d-flex mx-auto justify-content-center my-2">
       <div class="card mx-auto" style="width: 400px;">
         <div class="card-body">
           <h5 class="card-title">This is title of booking</h5>
@@ -19,46 +24,17 @@
               This should be booking details
             </li>
           </p>
-          <%= link_to "Cancel this booking", "", class: "btn btn-primary" %>
+          <%= link_to "Cancel this booking", "", class: "btn home-btn" %>
         </div>
       </div>
+    </div>
     <%# end %>
   </div>
-  <div class="bottom-buttons">
+  <div class="bottom-buttons text-center">
     <p><%= link_to "Home", root_path, class:"btn btn-secondary mb-4" %></p>
   </div>
 </div>
 </div>
 
-
-
-
-
-
-
-
-
-
-<!-- <div class="container p-6 mt-4 bg-white text-center">
-    <h1>Athlete Profile Page</h1>
-
-        <%#= cl_image_tag current_user.user_image, class: "round_image", :transformation => { :width => 400, :height =>400, :crop => "fill" } %>
-          <div class="card-body">
-            <h5 class="card-title"><%= current_user.first_name %> <%= current_user.last_name %></h5>
-            <h6>Athelete Bio:</h6>
-            <p><%= current_user.bio %></p>
-             <%#= link_to "Back to Home", root_path, class: "btn btn-secondary" %>
-
-            <!--   <p class="card-text">
-            <li>
-              <%#current_user.bookings.each do |booking| %>
-                <%#= booking.date %><%#=booking.time%> <%#= user.first_name %>
-              <%#end %>
-            </li>
-              </p>
-         <!--  <%#= link_to "Edit Profile", edit_user_registration_path(current_user), class: "btn btn-primary" %> -->
-          <!-- </div> -->
-    <%# end %>
-  <!-- </div> -->
 
 
