@@ -6,7 +6,8 @@ class UsersController < ApplicationController
     @markers = @coaches.map do |coach|
       {
         lng: coach.longitude,
-        lat: coach.latitude
+        lat: coach.latitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { coach: coach })
       }
     end
   end

@@ -1,0 +1,8 @@
+<div class= "card mapboxgl-popup mapboxgl-popup-content" >
+  <h2><%= coach.first_name %></h2>
+  <%= link_to "View", user_sessions_path(coach), class: "btn home-btn" %>
+  <p><%= coach.address %></p>
+  <%= cl_image_tag coach.user_image, class: "card-img-top round_image_pop" %>
+</div>
+
+
