@@ -1,10 +1,13 @@
 <div class="container">
   <h1>Book a Session With This Coach</h1>
+
   <%= simple_form_for [@user, @booking] do |f| %>
+  <div class="form-inputs">
     <%= f.association :session, label: 'Choose Your Session' %>
     <%= f.input :date, label: 'Choose The Date'  %>
     <%= f.input :time, as: :time, label: 'Choose The Time'  %>
     <%= f.button :submit, class: "btn home-btn" %>
+  </div>
   <% end %>
 </div>
 
