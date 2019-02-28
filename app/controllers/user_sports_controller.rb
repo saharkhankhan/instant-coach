@@ -26,6 +26,10 @@ class UserSportsController < ApplicationController
 
   private
 
+  # def user_sports_params
+  #   params.require(:user_sport).permit(:user_sport_id, :user)
+  # end
+
   def session_params
     params.require(:user_sport).permit(:sport, :user_sport_id, :user)
   end
