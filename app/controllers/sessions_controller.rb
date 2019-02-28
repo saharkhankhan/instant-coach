@@ -19,21 +19,6 @@ class SessionsController < ApplicationController
     end
   end
 
-  def edit
-
-  end
-
-  def update
-    @user = User.find(params[:user_id])
-    @session.update(session_params)
-    @session.user = @user
-    if @session.save
-      redirect_to user_path(@user)
-    else
-      render :new
-    end
-  end
-
   def destroy
     @session = Session.find(params[:id])
     @user = @session.coach
