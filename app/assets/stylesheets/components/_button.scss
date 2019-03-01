@@ -28,3 +28,10 @@
     text-decoration: none;
   }
 }
+
+.btn-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 40px;
+}

@@ -1,14 +1,19 @@
-<div class="container">
-  <h1>Book a Session With <%=  @user.first_name %> </h1>
-
-  <%= simple_form_for [@user, @booking] do |f| %>
-  <div class="form-inputs">
-    <%= f.association :session, collection: @user.coach_sessions, label: 'Choose Your Session' %>
-    <%= f.input :date, label: 'Choose The Date'  %>
-    <%= f.input :time, as: :time, label: 'Choose The Time'  %>
-    <%= f.button :submit, class: "btn home-btn" %>
+<div class="container justify-content-center my-2 form-div">
+  <div class="row">
+    <div class="col-12">
+      <div class="form-border mb-4">
+        <h2 class="text-center my-3">Book a Session With <%=  @user.first_name %> </h2>
+        <%= simple_form_for [@user, @booking] do |f| %>
+          <div class="form-inputs">
+            <%= f.association :session, collection: @user.coach_sessions, label: 'Choose Your Session' %>
+            <%= f.input :date, label: 'Choose The Date'  %>
+            <%= f.input :time, as: :time, label: 'Choose The Time'  %>
+            <%= f.button :submit, class: "btn btn-2" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
-  <% end %>
 </div>
 
 
