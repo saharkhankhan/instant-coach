@@ -8,6 +8,22 @@
               <div class="card-body">
                 <h5 class="card-title"><%= coach.first_name.capitalize %></h5>
                 <p class="card-text"><%= coach.bio %></p>
+
+                <% bookings = Booking.all.select do |booking| %>
+                <% booking.session.coach_id == coach.id %>
+                <% end %>
+                <p>Ranking:
+                  <% if bookings.count <= 0   %>
+                    <%= "💩" %>
+                  <% elsif bookings.count >= 1 %>
+                    <%= "🥉" %>
+                  <% elsif bookings.count > 3 %>
+                    <%= "🥈" %>
+                  <% elsif bookings.count > 5 %>
+                    <%= "🥇" %>
+                  <% end %>
+                </p>
+                <%= link_to "View #{coach.first_name.capitalize}", user_sessions_path(coach), class: "btn home-btn" %>
               </div>
                 <%= link_to "View #{coach.first_name.capitalize}", user_sessions_path(coach), class: "btn home-btn my-2 card-btn" %>
             </div>
