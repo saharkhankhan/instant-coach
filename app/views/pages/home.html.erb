@@ -4,7 +4,9 @@
     <p>
       <span id="banner-typed-text"></span>
     </p>
-    <%= link_to "Find a Coach Now!", users_path, class: "home-btn"%>
+    <%= link_to users_path, id: "btn-home" do%>
+      <%="FIND A COACH NOW"%> <i class="fas fa-map-marker-alt"></i>
+    <% end %>
   </div>
 </div>
 
