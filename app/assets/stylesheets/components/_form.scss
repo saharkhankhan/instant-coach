@@ -13,5 +13,11 @@
 }
 
 .form-div {
-  height: 100vh;
+  min-height: calc(100vh - 130px);
+}
+
+.form-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
