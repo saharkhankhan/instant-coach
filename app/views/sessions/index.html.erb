@@ -14,11 +14,11 @@
         <p>This coach has been booked <strong><%= bookings.count %></strong> Times
           <% if bookings.count <= 0   %>
             <%= "💩" %>
-          <% elsif bookings.count > 1 %>
+          <% elsif bookings.count >= 1 %>
             <%= "🥉" %>
           <% elsif bookings.count > 3 %>
             <%= "🥈" %>
-          <% else %>
+          <% elsif bookings.count > 5 %>
             <%= "🥇" %>
           <% end %>
         </p>
