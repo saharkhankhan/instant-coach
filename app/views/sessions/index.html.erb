@@ -4,10 +4,24 @@
     <div class="col-12">
       <div class="wrapper">
         <div class="banner-half" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/1600x900/?fitness);">
-         <h2><%= @coach.first_name %></h2>
+         <h2><%= @coach.first_name.capitalize %></h2>
           <%= cl_image_tag @coach.user_image, class: "round_image", id: "image-top" %>
         </div>
         <p><%= @coach.bio %></p>
+        <% bookings = Booking.all.select do |booking| %>
+        <% booking.session.coach == @coach %>
+        <% end %>
+        <p>This coach has been booked <strong><%= bookings.count %></strong> Times
+          <% if bookings.count <= 0   %>
+            <%= "💩" %>
+          <% elsif bookings.count > 1 %>
+            <%= "🥉" %>
+          <% elsif bookings.count > 3 %>
+            <%= "🥈" %>
+          <% else %>
+            <%= "🥇" %>
+          <% end %>
+        </p>
       </div>
   <div class="container d-flex mx-auto justify-content-center">
     <% @coach.coach_sessions.each do |session| %>
