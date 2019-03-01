@@ -19,6 +19,12 @@ const addMarkersToMap = (map, markers) => {
     element.style.width = '25px';
     element.style.height = '25px';
     const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
+    element.addEventListener('mouseenter', e => {
+      popup.addTo(map)
+    })
+    element.addEventListener('mouseleave', e => {
+      popup.remove()
+    })
     new mapboxgl.Marker(element)
       .setLngLat([ marker.lng, marker.lat ])
       .setPopup(popup)
