@@ -11,7 +11,7 @@
         <% bookings = Booking.all.select do |booking| %>
         <% booking.session.coach == @coach %>
         <% end %>
-        <p>This coach has been booked <strong><%= bookings.count %></strong> Times
+        <p class="m-2">This coach has been booked <strong><%= bookings.count %></strong> Times
           <% if bookings.count <= 0   %>
             <%= "💩" %>
           <% elsif bookings.count >= 1 %>
