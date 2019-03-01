@@ -4,8 +4,9 @@
       <div class="form-border">
       <h3>🏅CREATE A NEW SESSION🏅</h3>
         <%= simple_form_for [@coach, @session] do |f| %>
+        <%= f.error_notification %>
           <div class="form-inputs">
-            <%= f.input :title, label: 'Title', placeholder: 'Yoga' %>
+            <%= f.input :title, label: 'Title', placeholder: 'Session Name' %>
             <%= f.input :description, label: 'Description', placeholder: 'Duration / difficulty etc..' %>
             <%= f.button :submit, "Create Session", class:"btn btn-2 my-2" %>
           </div>
