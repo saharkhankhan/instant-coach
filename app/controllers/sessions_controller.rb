@@ -23,7 +23,11 @@ class SessionsController < ApplicationController
     @session = Session.find(params[:id])
     @user = @session.coach
     @session.destroy
-    redirect_to user_path(current_user)
+
+    respond_to do |format|
+      format.html { redirect_to user_path(current_user) }
+      format.js # <-- will render `app/views/reviews/destroy.js.erb`
+    end
   end
 
   private

@@ -22,7 +22,10 @@ class BookingsController < ApplicationController
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to user_path(current_user)
+    respond_to do |format|
+      format.html { redirect_to user_path(current_user) }
+      format.js # <-- will render `app/views/reviews/destroy.js.erb`
+    end
   end
 
   private
