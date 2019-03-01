@@ -55,6 +55,15 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-// .booking-card {
-//   background-color: green;
-// }
+.card-img-top {
+  width: 274px;
+  height: 183px;
+  object-fit: cover;
+}
+
+.card {
+  &:hover {
+    box-shadow: 8px 8px rgba(20,252,218,0.4);
+    transition: 0.4s;
+  }
+}
