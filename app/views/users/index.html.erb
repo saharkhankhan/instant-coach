@@ -12,6 +12,7 @@
                 <% bookings = Booking.all.select do |booking| %>
                 <% booking.session.coach_id == coach.id %>
                 <% end %>
+              </div>
                 <p>Ranking:
                   <% if bookings.count <= 0   %>
                     <%= "💩" %>
@@ -23,8 +24,6 @@
                     <%= "🥇" %>
                   <% end %>
                 </p>
-                <%= link_to "View #{coach.first_name.capitalize}", user_sessions_path(coach), class: "btn home-btn" %>
-              </div>
                 <%= link_to "View #{coach.first_name.capitalize}", user_sessions_path(coach), class: "btn home-btn my-2 card-btn" %>
             </div>
           </div>
