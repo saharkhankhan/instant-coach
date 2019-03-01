@@ -7,7 +7,8 @@ class UsersController < ApplicationController
       {
         lng: coach.longitude,
         lat: coach.latitude,
-        infoWindow: render_to_string(partial: "infowindow", locals: { coach: coach })
+        infoWindow: render_to_string(partial: "infowindow", locals: { coach: coach }),
+        image_url: helpers.asset_url('whistle.png')
       }
     end
   end
