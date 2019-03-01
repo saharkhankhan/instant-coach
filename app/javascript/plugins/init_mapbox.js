@@ -23,7 +23,7 @@ const addMarkersToMap = (map, markers) => {
       popup.addTo(map)
     })
     element.addEventListener('mouseleave', e => {
-      popup.remove()
+      setTimeout(() => popup.remove(), 1000)
     })
     new mapboxgl.Marker(element)
       .setLngLat([ marker.lng, marker.lat ])
