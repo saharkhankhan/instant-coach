@@ -16,13 +16,13 @@
     <div class="container d-flex mx-auto justify-content-center">
       <% current_user.athlete_bookings.each do |booking| %>
       <div class="col-4 d-flex mx-auto justify-content-center my-2 booking-card">
-        <div class="card mx-auto" style="width: 400px;">
+        <div class="card mx-auto" style="width: 400px;" data-booking-id="<%= booking.id %>">
           <div class="card-body">
                 <h4><%= booking.session.title %> with <%= booking.session.coach.first_name %><h4>
                 <p class="card-text">Date: <%= booking.date %> </p>
                 <p class="card-text">Time: <%= booking.time.strftime("%H:%M") %></p>
                 <%= link_to "Cancel This Booking", user_booking_path(current_user, booking), method: :delete,
-                data: { confirm: "Are you sure?" }, class: "btn home-btn" %>
+                data: { confirm: "Are you sure?" }, class: "btn home-btn", remote: true %>
           </div>
         </div>
       </div>
