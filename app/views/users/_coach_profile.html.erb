@@ -14,6 +14,21 @@
               <% current_user.user_sports.each do |u_sport|%>
                 <p> 🏅<%= u_sport.sport.name %></p>
               <% end %>
+              <% bookings = Booking.all.select do |booking| %>
+                <% booking.session.coach == @coach %>
+                <% end %>
+                <p>You have been booked <strong><%= bookings.count %></strong> Times </p>
+                <p>You're Curent Ranking:
+                  <% if bookings.count <= 0   %>
+                    <%= "💩 (Poop)" %>
+                  <% elsif bookings.count >= 1 %>
+                    <%= "🥉 (Bronze)" %>
+                  <% elsif bookings.count > 3 %>
+                    <%= "🥈 (Silver)" %>
+                  <% elsif bookings.count > 5 %>
+                    <%= "🥇 (Gold)" %>
+                  <% end %>
+                </p>
               <button type="button" class="btn home-btn" data-toggle="modal" data-target="#exampleModal">
                 Add a specialty
               </button>
