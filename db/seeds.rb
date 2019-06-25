@@ -271,6 +271,7 @@ Sport.create(name: "Spin 🚴🏻‍♂️")
 Sport.create(name: "Tennis 🎾")
 Sport.create(name: "Basketball ⛹🏻‍♂️")
 
+Reaction.create(name: "respect")
 
 puts "Finshed ✅"
 
