@@ -17,5 +17,8 @@
   },
   "devDependencies": {
     "webpack-dev-server": "3.1.11"
+  },
+  "resolutions": {
+    "js-yaml": "^3.13.1"
   }
 }
